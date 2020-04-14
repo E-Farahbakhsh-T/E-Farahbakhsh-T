@@ -222,7 +222,10 @@ public class MergeTree {
     private boolean partition(ArrayList<Node> setofchild, ArrayList<Node> setofchildw)
     {
         boolean answer = false;
-        
+        for(Node node: setofchild)
+        {
+            
+        }
         
         return answer;
     }
