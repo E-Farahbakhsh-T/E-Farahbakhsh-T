@@ -12,7 +12,7 @@ public class MergeTree {
     Node root;
     ArrayList<Double> functlist;
     ArrayList<Node> nodelist;
-    ArrayList<ArrayList<Node>> lastlayeroft1;
+    ArrayList<ArrayList<String>> lastlayeroft1;
     ArrayList<Node> lastlayeroft2;
     ArrayList<Boolean> amount;
     
@@ -222,10 +222,6 @@ public class MergeTree {
     private boolean partition(ArrayList<Node> setofchild, ArrayList<Node> setofchildw)
     {
         boolean answer = false;
-        for(Node node: setofchild)
-        {
-            
-        }
         
         return answer;
     }
@@ -248,4 +244,11 @@ public class MergeTree {
         
     }
 
+    
+    private ArrayList<String> part(int n, int m)
+    {
+        ArrayList<String> list = new ArrayList<String>();
+        for()
+    }
+    
 }
