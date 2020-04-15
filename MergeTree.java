@@ -223,6 +223,18 @@ public class MergeTree {
     private boolean nodepartition(ArrayList<Node> setofchild, ArrayList<Node> setofchildw)
     {
         boolean answer = false;
+        ArrayList<Integer> first = new ArrayList<Integer>();
+        ArrayList<Integer> second = new ArrayList<Integer>();
+        for (int i=1; i<= setofchild.size();i++)
+        {
+            first.add(i);
+        }
+        for (int i=1; i<= setofchildw.size();i++)
+        {
+            second.add(i);
+        }
+        partition(first, second, setofchild.size());
+        
         
         return answer;
     }
