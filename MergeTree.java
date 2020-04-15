@@ -246,14 +246,20 @@ public class MergeTree {
     }
 
     
-    private ArrayList<String> partition(ArrayList<Integer> first, ArrayList<Integer>second, int n)
+    private void partition(ArrayList<Integer> first, ArrayList<Integer>second, int n)
     {
         if(first.size() ==n)
         {
             this.allpartition.add(first);
         }else
         {
-            
+            for(int i: second)
+            {
+                int index = second.indexOf(i);
+                first.add(i);
+                second.remove(i);
+                partition(first,second,n);
+            }
         }
     }
     
