@@ -92,6 +92,7 @@ public class MergeTree {
     
     public MergeTree(Node u)
     {
+        this.allpartition = new ArrayList<ArrayList<Integer>>();
         this.functlist = new ArrayList<Double>();
         this.root = u;
         u.set_father(new Node());
@@ -223,19 +224,11 @@ public class MergeTree {
     private boolean nodepartition(ArrayList<Node> setofchild, ArrayList<Node> setofchildw)
     {
         boolean answer = false;
-        ArrayList<Integer> first = new ArrayList<Integer>();
-        ArrayList<Integer> second = new ArrayList<Integer>();
-        for (int i=1; i<= setofchild.size();i++)
+        this.fillpartition(setofchild.size(), setofchildw.size());
+        for(ArrayList<Integer> part:this.allpartition)
         {
-            first.add(i);
+            
         }
-        for (int i=1; i<= setofchildw.size();i++)
-        {
-            second.add(i);
-        }
-        partition(first, second, setofchild.size());
-        
-        
         return answer;
     }
     
@@ -257,6 +250,21 @@ public class MergeTree {
         
     }
 
+    private void fillpartition(int n, int m)
+    {
+        ArrayList<Integer> first = new ArrayList<Integer>();
+        ArrayList<Integer> second = new ArrayList<Integer>();
+        for (int i=1; i<= n;i++)
+        {
+            first.add(i);
+        }
+        for (int i=1; i<= m;i++)
+        {
+            second.add(i);
+        }
+        partition(first, second, n);
+        
+    }
     
     private void partition(ArrayList<Integer> first, ArrayList<Integer>second, int n)
     {
